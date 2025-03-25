@@ -1,0 +1,29 @@
+Anotações - Aula 14
+
+Estrutura de repetição com váriavel de controle: basicamente,
+nesse hexágono é feito 3 coisas, inicialização, teste lógico
+e o incremento.
+Caso esse teste seja verdadeiro, vai executar um bloco, e, feito
+o bloco, ele vai voltar para o hexágono, mas na hora que ele voltar
+vai acontecer o incremento, e isso vai continuar acontecendo, e
+quando esse teste lógico virar falso, ele vai seguir o caminho
+de encerramento. Isso chamamos de estrutura de repetição com
+váriavel de controle.
+Sintaxe disso:
+for (inicio ; teste ; incremento){
+  bloco
+}
+
+Vamos ver um exemplo:
+
+var c = 1
+while(c <= 10){
+  //bloco
+  c++
+}
+O que precisamos entender é que este código acima vai contar
+10 vezes.
+
+for (var c=1 ; c<=10 ; c++){
+  //Ambos tem a mesma funcionalidade.
+}

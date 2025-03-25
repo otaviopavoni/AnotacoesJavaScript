@@ -1,0 +1,74 @@
+Anotações - Aula 13
+
+Q01: //Sabe mudar a cor de fundo de um site?
+if (condição){
+  document.style.body.background = '#ffffff'
+}
+
+Q02: //Inserir uma imagem dentro do site sem a tag
+<img> previamente criada?
+var img = document.createElement('img')
+img.setAttribute('id', 'foto')
+img.setAttribute('src', 'foto.png')
+
+*Repetições em JS:
+Vamos aprender as estruturas que chamamos de laços ou
+interações.
+
+Exemplo:
+função comerPizza(){
+  comerFatia()
+  comerFatia()
+  comerFatia()
+  comerFatia()
+  comerFatia()
+  comerFatia()
+  comerFatia()
+  comerFatia()
+}
+Na programação também é assim, partimos de um ponto A
+para um ponto B.
+
+E pra conseguir atingir nosso objetivo temos várias formas,
+coisa que chamaos de estruturas de controle, a primeira
+é a sequência:
+
+Você vai do ponto A para o ponto B sequencialmente
+- Mas tem desvios, etc, por isso vemos as condições.
+Nem tudo na programação é feita de uma sequencia, às
+vezes é necessario vermos condições, e hoje iremos
+ver um novo tipo de controle, os laços.
+
+Um laço começa testando uma condição, com isso, há duas
+opções, true ou false: Mas o comportamento é diferente.
+Se for true, ele vai executar um bloco, mas não vai para
+o ponto final, ele vai voltar para a condição novamente e
+testar, se ela for verdadeira denovo, vai executar a tarefa
+e fazer outro laço, e ele vai fazer isso ENQUANTO essa
+condição seja verdadeira, se der fase, a condição é
+quebrada e então vai pro final.
+
+Sintaxe dela:
+while (condição) {
+  bloco
+} //se for verdadeira, vai chegar nessa chave aqui em
+baixo e voltar para cima, para testar novamente etc etc.
+Depois, quando for e se for false, o laço vai pro final
+e acaba.
+
+Voltando a comer pizza:
+
+function comerPizza(){
+  while(temFatia()){ //Enquanto ter fatia, ele vai comer.
+    comerFatia()    //Quando for false, ele executa.
+  }
+}
+Essa function utilizando o while pode servir para tamanhos
+ilimitados de pizza, já, aquele outro programa servia
+apenas até 8.
+
+Você também pode fazer a estrutura ao contrário
+Primeiro executa o bloco depois faz o teste:
+do{
+  bloco
+} while (condição)

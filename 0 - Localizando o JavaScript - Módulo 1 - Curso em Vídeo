@@ -1,0 +1,62 @@
+Nessas anotações iremos ver o básico visto até então do curso de JavaScript do Curso em Vídeo.
+
+O que é HTML, CSS e JS?
+
+Iremos ver melhor nesse exemplo:
+Num escritório que fazem reportagens há 3 pessoas:
+A escritora, que tem todo o conteúdo da reportagem;
+O designer, que deixa todo o conteúdo mais atrativo e com fácil compreensão;
+O programador, que faz coisas adicionais, tipo o site funcionar, imagens aumentarem conforme
+o mouse passa por cima, entre outras muitas coisas.
+
+A escritora é o HTML, que vai ser aonde você vai escrever e/ou colocar vídeos, imagens, resumo:
+todo o conteúdo;
+O designer é o CSS, que cuida de toda a aparência do site;
+E o programador é o JS, que vai cuidar da mecanização e programação do site, para manter ele
+desde funcionando a coisas adicionais interessantes.
+
+Agora partindo para o código:
+para já escrever automaticamente o básico do HTML no interpretador é só escrever "html" e depois
+ir em "html:5"
+
+Código básico em HTML: (autoexplicativo)
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro treino!</title>
+
+    <!--Aonde o CSS fica-->
+    <style>
+      body{
+          background-color: rgb(220, 220, 255);
+      }
+      h1{
+          color:rgb(26, 26, 26);
+      }
+      h3{
+          color:rgb(37, 37, 37)
+      }
+    </style>
+</head>
+<body>
+    
+    <!--Aonde o HTML fica-->
+    <h1>The famous Lorem ipsum:</h1>
+    <h3>The history of the most famous text in the america: lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies</h3>
+    
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies sodales euismod. Mauris sed molestie nisi, sed hendrerit arcu. Integer tempus ultrices mauris. Nam a urna dui. Cras id semper sem. Mauris molestie viverra tellus, ut eleifend massa varius quis. Maecenas blandit consectetur tempus.
+    </p>
+    
+    <!--Aonde o script (JS) fica-->
+    <script>
+        window.alert("Lorem ipsum.")
+        window.confirm("Lorem ipsum?")
+        window.prompt("What's lorem ipsum?")
+    </script>
+</body>
+</html>

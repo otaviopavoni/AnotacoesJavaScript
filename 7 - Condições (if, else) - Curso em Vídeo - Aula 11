@@ -1,0 +1,37 @@
+Condições em If e Else:
+
+Antes de falarmos de condições, vamos falar de sequências:
+
+var n = 3
+n += 2
+window.alert(n)
+
+É impossível você executar a primeira linha de código, depois a segunda,
+depois a primeira, etc - Vai estar seguindo a ordem.
+Primeiro executa o comando 1, depois o comando 2, depois o comando 3.
+
+"Ah, mas vai ter horas que eu vou querer executar o comando 2, e horas
+que eu não vou querer"
+Dai que entra as condições:
+Agora, adicionando as condições, há uma bifurcação no caminho. Depois
+que eu executo um dos lados dessa bifurcação, elas vão se encontrar de
+novo e vão executar até o fim do programa.
+
+if (condição){
+  true  //caso a condição de cima seja true, vai executar esse bloco
+}                       IF = "se"
+else {                  ELSE = "se não"
+  false //caso a condição for falsa, executa esse.
+}
+
+Nessa aula iremos ver dois tipos de condição:
+if (condição){
+  true            //Condição Simples
+}
+
+if (condição){	//Condição Composta
+  true
+}
+else{
+  false
+}

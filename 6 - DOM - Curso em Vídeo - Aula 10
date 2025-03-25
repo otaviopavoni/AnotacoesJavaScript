@@ -1,0 +1,174 @@
+Resumo da última aula:
+DOM é o Document Object Model, ele é um facilitador que existe dentro
+do seu navegador, dentro do HTML5 para dar acesso aos elementos diretamente
+para o JavaScript, sem o DOM teriamos muita dificuldade para acessar os
+elementos na nossa página.
+
+Depois preparamos a Árvore DOM do nosso site, lembrando: TODO site tem a
+sua árvore DOM diferente uma da outra.
+
+Depois vimos 5 técnicas pra acessar elementos dentro do JavaScript usando
+o DOM. A gente usou o:
+TagName (por nome)
+ID (por ID)
+Name (pelo nome do componente, elemento)
+ClassName
+querySelector(faz a seleção através de elementos CSS)
+
+E nessa aula iremos focar em eventos, exemplo:
+* evento é tudo que pode acontecer com a nossa div? um monte de coisas.
+o mais comum é eventos de mouse.
+
+<div>
+mouseenter //o mouse entra na div
+mousemove //o mouse começa a se mecher na div
+mousedown //clicou na div e segurou
+mouseup //quando soltar o botão do mouse, dispara o evento 'mouse up'
+click //apertou e soltou normalmente, tem o evento 'click'
+mouseout //quando move o mouse para fora dessa div
+
+* Para ver melhor os eventos, cheque:
+https://developer.mozilla.org/pt-BR/docs/Web/Events
+
+Mas antes para disparas os eventos, é preciso explicar o que é uma função:
+Uma função em JavaScript é um conjunto de códigos, um conjunto de linhas
+que vão ser executadas só quando o evento ocorrer.
+
+Exemplo: Eu vou programar 10 linhas (o que a gente chama de bloco)
+Essas 10 linhas não vão ser executadas automaticamente, só vão ocorrer,
+quando por exemplo, eu clicar dentro da div, então essas 10 linhas só
+vão ser disparadas somente quando o evento ocorrer.
+Pra executar essas linhas só quando o evento ocorrer, o primeiro passo
+é colocar ela dentro de um bloco:
+{
+  bloco
+}
+Esse bloco, devemos nomear ele como uma 'function'
+function {
+
+}
+Dá para fazer uma função anonima em JS, mas para funcionar tem que
+dar um nome para a função. E, geralmente, os nomes das funções são
+ações que essa função vai fazer: Geralmente são funções de eventos.
+
+function ação() {
+  bloco
+}
+
+E também, dentro desses paranteses você pode colocar alguns parâmetros,
+pode ser vários parâmetros, mas isso iremos ver mais para frente.
+
+Agora iremos abrir o nosso código e disparar um código de click:
+* os eventos podem ser configurados na parte HTMl ou diretamente na parte
+de JavaScript.
+
+Para configurar no HTML, você pode fazer:
+
+<body>
+    <div id='area' onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" onmousedown="segurou()">
+
+        Interaja...
+
+    </div>
+</body>
+
+Mas assim deixa o HTMl um pouco poluido demais, e acho mais prático fazer
+com o JS:
+
+<script>
+
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        a.addEventListener('mousedown', segurou)
+
+        function clicar(){
+            area.innerText = 'Clicou!'
+            a.style.backgroundColor = 'green'
+        }
+
+        function entrar(){
+            area.innerText = 'Entrou!'
+        }
+
+        function sair(){
+            area.innerText = 'Saiu!'
+            a.style.backgroundColor = 'red'
+        }
+
+        function segurou(){
+            area.innerText = 'Segurando!'
+            a.style.backgroundColor = 'red'
+        }
+</script>
+
+Adicionando o "addEventListener" - sempre que ocorrer um evento no qual
+você mesmo colocou entre parenteses, vai acontecer a função.
+
+Agora, iremos partir para o exemplo de uma calculadora em HTML, CSS e JS
+para vermos o que dá para fazer com o que aprendemos até agora.
+
+<body>
+
+    <h1>Somando Valores.</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id = 'res'><strong>Resultado</strong></div>
+
+    <script>
+
+        function somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é <strong>${s}</strong>.`
+
+        }
+
+    </script>
+</body>
+</html>
+
+O input type number serve para criar uma caixa no qual o usúario poderá
+colocar algum número, e o input type button é o botão.
+A div no final é o resultado.
+
+No JS, estamos pegando e armazenando os primeiros dados nas váriaveis
+tn1, tn2 e res. (nomes comparentes aos resultados.)
+E depois armazenando em n1 e n2 e trocando para number.
+a váriavel S armazena o resultado e no final, o resultado (div) muda
+conforme o resultado.
+
+O CSS do site ficou:
+
+<style>
+
+        body{
+            font: normal 20pt Arial;
+            background-color: rgb(166, 208, 240);
+        }
+
+        h1{
+            background-color: white;
+            width: 250px;
+            height: 125px;
+            text-align: center;
+
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div#res{
+            margin-top: 20px;
+
+        }
+
+    </style>

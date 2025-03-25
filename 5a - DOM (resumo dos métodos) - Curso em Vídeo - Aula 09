@@ -1,0 +1,7 @@
+Cinco principais métodos de seleção no JS:
+
+getElementsByTagName()
+getElementByID()
+getElementsByClassName()
+getElementsByName()
+querySelector()

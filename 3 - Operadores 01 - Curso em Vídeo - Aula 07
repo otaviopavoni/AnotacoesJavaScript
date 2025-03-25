@@ -1,0 +1,83 @@
+Anotações da Aula 07.
+
+Nesse curso iremos ver tais operadores:
+aritméticos;
+atribuição;
+relacionais;
+lógicos;
+ternário.
+
+Nessa aula iremos focar nos dois primeiros operadores.
+
+Operadores aritméticos:
++
+-
+*
+/
+%
+**
+
+Dai então só colocamos os operandos:
+
+5 + 2 = 7
+5 - 2 = 3
+5 * 2 = 10
+5 / 2 = 2.5 / Divisão real, leva a vírgula.
+5 % 2 = 1 / Divisão inteira, aquela que não leva a vírgulinha.
+Resto da divisão.
+5 ** 2 = 25 / Potência (ao quadrado)
+
+* A precedência no JavaScript de operadores é assim:
+()	I
+**	I
+* / %   I
++ -	V
+
+Exemplo de atribuição simples:
+
+var a = 5 + 3		(a = 8)
+var b = a % 5		(b = 3)
+var c = 5 * b ** 2	(c = 45)
+var d = 10 - a / 2	(d = 6)
+var e = 6 * 2 / d	(e = 2)
+var f = b % e + 4 / e	(f = 3)
+
+Para mudar os valores das váriaveis de forma simples,
+é só usar:
+> var n = 2 + 3
+5
+> n += 4
+9
+> n -= 9
+0
+
+Também serve para os outros operadores aritméticos:
+
+n +=
+n -=
+n *=
+n /=
+n **=
+n %=
+
+Agora, sobre os incrementos:
+Para adicionar ou remover apenas 1 unidade de alguma
+váriavel, apenas usar:
+x++
+x--
+* Atenção, existe pós incremento e pré incremento:
+
+> var n = 10
+> n
+10
+> n++
+10
+> n
+11
+> n--
+10
+> ++n
+11
+> --n
+10
+

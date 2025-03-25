@@ -1,0 +1,46 @@
+
+-> Funções:
+
+Temos 3 maneiras de funções em JS (function hoisting)
+Só dessa maneira que ocorre o hoisting:
+A engine do JS vai elevar as declarações funções
+e tal pro topo do nosso JavaScript, você pode chamar a função antes ou depois de criar a função (falaOi())
+// Declaração de função (function hoisting)
+function falaOi(){
+	console.log('Oie');
+};
+
+As funções em JavaScript são first-class objetcts:
+Objetos de primeira classe:
+Você pode tratar as funções como um dado.
+Exemplo:
+//Function expression:
+const souUmDado = function(){
+	console.log('Sou um dado.');
+};
+souUmDado();
+Isso é muito poderoso pois agora eu até posso executar minha função dentro de outra função
+function executaFuncao(funcao){
+	console.log('Vou executar sua função abaixo:')
+	funcao()
+} //Recebendo um parametro que vou receber na função, mas nesse caso
+estou esperando rceber uma função e vou executar ela.
+
+executaFuncao(souUmDado)
+
+Podemos também fazer arrow functions, é uma function expression só que bem mais curta.
+const funcaoArrow = () => {
+	console.log('Sou uma arrow function')
+}
+
+* Todas as funções são tratadas como objeto de primeira classe, são tratadas como um dado.
+- First-class objetcts (Objetos de primeira classe)
+
+Objetos:
+// Dentro de um objeto
+const obj = {
+	falar: function() {
+		console.log('Estou falando...')
+	}
+}
+obj.falar()

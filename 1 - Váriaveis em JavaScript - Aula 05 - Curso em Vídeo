@@ -1,0 +1,64 @@
+Anotações da aula #05: Váriaveis e Tipos Primitivos.
+
+Váriaveis:
+No JS, as váriaveis tem que seguir algumas regrinhas:
+Identificadores (váriaveis):
+* Podem começar com letra, $ ou _;
+* Não podem começar com números;
+* É possível usar letras ou números;
+* É possível usar acentos e símbolos;
+* Não podem conter espaços;
+* Não podem ser palavras reservadas;
+
+Dicas para criar nomes de váriaveis:
+* Maiúsculas e minúsculas fazem diferença;
+* Tente escolher nomes coerentes para as variáveis;
+* Evite se tornar um 'programador analfabeto' ou um
+'programador contador';
+O que você deve fazer é: 
+Nome na váriavel? Nome
+Salário na váriavel? Salário
+etc.
+
+Sendo assim, váriaveis servem para armazenarmos dados.
+
+Mas, existem tipos de váriaveis diferentes:
+
+Números inteiros: 5, 18, -21;
+Números flutuantes (float): 0.4, -24.1, 3.14;
+----- Mas no JavaScript, diferente de outras linguagens,
+ele não diferencia os números, todos são do mesmo tipo:
+o tipo "number". O JavaScript não vai diferenciar a
+priori valores númericos inteiros de valores númericos
+reais. -----
+
+Strings: "Google", 'JavaScript', `Maria`;
+Cadeias de caracteres. - Números também podem ser do
+tipo string, só se tiverem ponto, traço, etc. Basica-
+mente números que você não quer ou não irá fazer 
+contas com ele e ele está com "".
+
+Booleanos (Boolean): True ou False. (verdadeiro ou
+falso), (1,0). Se não é um, é outro, se algo é true
+então (...). Se váriavel = x então (...).
+
+Esses são os tipos primitivos primordiais, há mais
+tipos primitivos, mas no início falaremos apenas destes.
+
+*Outros exemplos de string:
+Dentro de number tempos: Infinity e NaN (Not a Number);
+Null;
+Undefined;
+Object (com Arrays dentro - vetor);
+Function.
+
+* Você pode saber qual o tipo de alguma váriavel usando
+"typeof". Dessa maneira:
+var n = 200
+typeof n
+'number'
+
+O typeof também funciona em string, números, bool, etc
+diretamente. Exemplo:
+typeof 6
+typeof "legal".

@@ -1,0 +1,133 @@
+O que iremos aprender nesse módulo é:
+
+Document Objetct Model - entender o que é: vertende web do
+JS no qual a linguagem foi criada. Uma poderosa ferramenta que
+está dentro dos navegadores, conjunto de objetos JavaScript para
+o tratamento de componentes visuais. É para criar aquelas aplica-
+ções mais bonitinhas.
+
+Árvore DOM - será explicado mais brevemente.
+
+Manipulando o DOM - ajudará a manipular o dom do seu site
+e em qualquer outro site da web.
+
+Introdução ao DOM: 
+Desde a primeira aula quando você estava mechendo no background de
+sites, deletando textos, arquivos, etc. Naquilo ali você já
+estava usando o DOM.
+
+DOM basicamente é um conjunto de objetos dentro de seu navegador
+que vai dar acesso aos componentes internos de seu website. o DOM
+não funciona dentro do node js, por exemplo. O DOM está presente
+quando eu estou rodando JavaScript dentro do meu navegador, por isso
+criamos o site do "ex005.html".
+
+E uma coisa importante que você deve conhecer e deve saber fazer é
+sua árvore DOM do seu site:
+Basicamente a árvore DOM começa da raiz e essa raiz dentro do
+navegador é chamada de window, então, tudo dentro do JavaScript está
+dentro de um objeto chamado window, que quer dizer janela.
+Então aquela janela do seu navegador é um objeto DOM e ele se chama
+window.
+Dentro do windows temos vários outros objetos, como:
+location = localização do seu site, qual é a url, a página atual
+e qual foi a página anterior.
+document = documento atual.
+history = guarda de onde você veio para onde você vai, isso facilita
+a navegação dentro de seu site. Existem muitos outros objetos, mas
+esses 3 são uns dos mais famosos.
+
+Dentro de 'document' existe um objeto muito importante que é o HTML,
+que é, exatamente, a parte HTML do meu site, dentro do HMTL temos 
+basicamente dois objetos (ou filhos, childs):
+head;
+body.
+
+Uma coisa que devemos prestar atenção é que head e body é filho
+de HTML, então eles são "Child", já por sua vez o HTML é um
+parent, um pai, uma mãe, enfim: um parente de head e body.
+Quem tá em baixo é child, onde quem está imediatamente acima de
+quem está embaixo é parent.
+É uma árvore hierárquica.
+
+No nosso documento, dentro de head temos várias tags: meta, 
+title, e todas as outras que podemos colocar.
+Já em body, pro nosso documento atual nós tewmos um h1, p, p e
+uma div. Dentro do segundo parágrafos temos um filho, que é um
+"strong".
+
+~ * É a árvore hierárquica do site que acabamos de criar. * ~
+
+Na prática:
+
+Se você for em scripts e botar:
+	window.document.write(window.document.charset)
+	window.document.write(window.navigator.appName)
+	window.document.write(window.document.URL)
+
+Você consegue acessar pastas e arquivos armazenados na árvore
+hierárquica do seu site e mostrar documentos, coisas na tela, etc.
+
+Então eu posso navegar dentro dessa árvore do jeito que achar melhor,
+e pra isso existem várias maneiras de navegar entre os elementos.
+* Elemento é qualquer coisa que apareceu na árvore DOM.
+
+Há cincos metódos básicos de navegação entre os objetos de DOM:
+
+por Marca (tag)
+getElementsByTagName()
+
+Exemplo de navegação com TAG:
+	var p1 = window.document.getElementsByTagName('p')[0]
+	window.document.write('Está escrito assim: ' + p1.innerText)
+	p1.style.color = 'red'
+* Na primeira linha declaramos "p1" como o parágrafo 1, pegando
+as informaçõs do p1 usando o getElementsByTagName('')
+O "p" dentro de parenteses é o paragrafos, e o [] depois, é:
+Quando há mais de um parágrafo ou elemento com o mesmo nome, você deve
+selecionar pela ordem, exemplo: primeiro parágrafo = [0], segundo = [1],
+etc.
+Dai depois, podemos usar a váriavel para modificar tal elemento, como
+apagar, mudar as cores, e até mesmo mudar o texto.
+
+        var corpo = window.document.body
+        corpo.style.background = 'black'
+
+Outro exemplo de mudança.
+
+Quando importamos algo usando "innerText" ou "innerHTML" temos que prestar
+atenção se estaremos mostrar isso com um window.alert, ou em algum
+lugar que não suporta as tags tipo "strong"
+
+innerText pega o texto sem as filhas, sem a formatação. Pega só o texto.
+innetHTML pegta HTML inteiro inclusive com as tags filhas.
+
+
+* Eu também posso selecionar elementos, (melhor quando o site é mais evo-
+luido), por ID, por exemplo, eu possa identificar um parágrafo ou
+a div que iremos utilizar por um ID.
+getElementById()
+
+* Também posso utilizar o nome do objeto se eu tenho uma propriedade
+name, então eu vou utilizar getElementsByName(), como ele tem o S, de
+plurall, então eu tenho que utilizar aquele colchete.
+
+Quando eu tenho mais de um objeto da mesma classe ou mesmo nome, eu
+vou utilizar muito por marca, os tag names, e também por:
+getElementsByName()
+
+Quando eu quero selecionar um objeto, ou uma familia deles eu vou
+utilizar o ID.
+
+* Também posso utilizar o conjunto com classe:
+getElementsByClassName()
+
+* Por seletor:
+querySelector()
+querySelectorAll()
+
+* Toda DIV é presentado por uma #
+* Toda classe é representada por um "."
+
+O querySelector acaba sendo mais prático quando estamos fazendo
+alterações rápidas no nosso site.

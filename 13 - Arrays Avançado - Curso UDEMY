@@ -1,0 +1,80 @@
+
+-> Arrays - Atribuição via desestruturação
+let a = 'A'
+let b = 'B'
+let c = 'C'
+
+const letras = [b, c, a]
+[a, b, c] = letras
+
+console.log(a, b, c)
+
+É assim a atribuição via desestruturação.
+
+Suponha que eu tenha um array de números:
+		 0  1  2  3  4  5  6  7  8
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const [primeiro numero, segundoNumero] = numeros;
+Pegando o elemento 1(0), e cada item do array eu tou pegando um elemento.
+
+console.log(primeiroNumero, segundoNumero);
+
+Você também consegue pegar o resto do array, e
+armazenar em uma váriavel só usando "...var"
+
+const [um, dois, tres, ...resto] = numeros
+console.log(um, dois, tres)
+console.log(resto)
+
+O operador "..." faz 2 coiass:
+Quando a gente usou nesse sentido, para pegar
+o resto de alguma coisa, ele chama rest.
+Quando ele é no sentido de espalhar, distribuir
+alguma coisa, ele chama de spread.
+Só muda o contexto.
+
+Agora vamos pular valores:
+(utilizando a mesma constante de numeros criada acima)
+const = [um,  três, , cinco, , sete] = numeros
+console.log(um, três, cinco)
+
+> 1, 3, 5
+
+Agora iremos entrar em um nível um pouco mais complexo:
+Suponha que eu tenha um array, e dentro desse array eu tenho outros arrays:
+
+const numeros = [
+        Inidice 0
+	0   1  2
+	[1, 2, 3],
+
+	Indice 1
+         0  1  2
+	[4, 5, 6],
+
+	Indice 2
+	 0  1  2
+	[7, 8, 9]
+]
+
+console.log(numeros[1][2])
+> 6
+
+Primeiro você coloca o indice da array depois
+o do valor.
+
+É como se fosse uma árvore de índices.
+
+Como a atribuição e desestruturação funciona nesse tipo?
+
+Vamos pegar o número 6:
+const [,[,,seis]] = numeros
+console.log(seis)
+> 6
+
+Isso deixa as coisas mais complexas invés de
+mais simples.
+
+const [lista1, lista2, lista3] = numeros;
+console.log(lista3[2])

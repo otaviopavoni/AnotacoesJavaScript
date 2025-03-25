@@ -1,0 +1,65 @@
+Temos dois tipos de contições:
+Simples - Executar apenas 1 bloco (se for verdadeiro ou só se for falso)
+Compostas - Executar 2 blocos (true e false)
+
+Mas há situações em que temos mais de uma possibilidades:
+Um faz isso, ou faz aquilo, ou faz aquilo outro
+São várias formas de tratar um determinado dado.
+
+Mas você consegue juntar uma coisa na outra (Condições Aninhadas):
+Vai pegar uma condição composta e adicionar outras condições dentro dela.
+
+Exemplo:
+Uma condição, se a primeira for true, executa um bloco, mas caso seja
+falso, tem outra condição a seguir, se for true, vai executar o bloco,
+caso não, vai seguindo assim até o final que você queira.
+Basicamente: Uma condição dentro da outra.
+
+* Aninhando vem de ninho: Um dentro do outro
+
+if (cond1){
+  bloco1
+}
+
+else if (cond2){      //Percebe também, que para executar o bloco2
+  bloco2             //o bloco1 tem que ser false, e assim segue.
+}
+
+else if (cond3){
+  bloco3
+}
+
+No ex011.js e ex012.js tem exercicios bem legais sobre condições
+aninhadas.
+
+Condição Múltipla:
+Tem a possibilidade não só do sim e não, tem a possibilidade de
+outros valores, de valores fixos.
+Uma expressão e dessa expressão eu testo vários valores e depois
+volto para o continuamento do programa.
+
+Temos um comando em JavaScript chamado "switch"
+switch (expressão) {
+  case valor1:
+
+
+  break
+  case valor2:
+
+
+  break
+  case valor3:
+
+  break
+  default:        //Caso nenhum dos acimas sejam satisfeitos
+  
+
+  break
+}
+
+Então, caso o valor 2 seja verdadeiro, irá executar o bloco do valor
+2, e então vai diretamente para fora do switch. *É preciso sempre
+do BREAK no final de cada "case"
+
+* O switch é muito mais importante para testar dados pontuais, não intervalos
+Só funciona com números inteiros e string.

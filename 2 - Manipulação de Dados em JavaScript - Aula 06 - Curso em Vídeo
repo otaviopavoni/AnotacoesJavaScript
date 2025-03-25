@@ -1,0 +1,92 @@
+Anotações da Aula 06 - Tratamento de dados.
+
+Iremos começar a manipular os dados.
+Anteriormente pegávamos dados com:
+ window.alert("")
+ window.confirm("")
+ window.prompt("")
+Mas não guardávamos esses dados em lugar nenhum para
+depois, caso preciso, usar novamente tais dados.
+
+Agora, para criarmos uma váriavel com o resultado escrito
+pelo user, usamos:
+"var nome"
+ou
+"let nome"
+======
+var nome = window.prompt('Qual é o seu nome?')
+Agora tudo que será digitado no prompt será redirecionado
+para a váriavel. "nome"
+
+var nome = window.prompt('Qual é o seu nome?')
+window.alert('Prazer em te conhecer, ' + nome + '!')
+
+//Os sinais de "+" que juntam a string e a váriavel é
+chamada de concatenação.
+
+..Mas se tentarmos fazer uma conta, exemplo:
+        var n1 = window.prompt("Digite um número: ") // string
+        var n2 = window.prompt('Digite outro número: ')
+        var s = n1 + n2;
+        window.alert('A soma dos valores é: ' + s)
+O que irá retornar para nós é a soma LITERALMENTE dos
+números, exemplo:
+4 + 8 = 48.
+Isso porque usamos:
+number + number / + para adição
+string + string / + para concatenação
+* E quando o usúario digita no prompt é sempre retornado
+uma string, então precisamos converter o valor retornado
+para um number para ai sim fazer a conta.
+
+Há diversas maneiras de converter uma string para número
+Exemplo:
+Number.parseInt(n) - conversão de um número para um núme-
+ro inteiro.
+Number.parseFloat(n) - conversão de um número para número
+flutuante (float).
+- Nas novas versões é só usar "Number(n)"
+Para converter de número para string, é só usar:
+String(n)
+ou
+n.toString()
+
+Hoje em dia há formas muito mais interessantes e práticas
+de criar um texto incluindo váriaveis, sem precisar colo-
+car:
+'O aluno ' + nome + ' com ' + idade + ' anos tirou a nota ' + nota
+Fica MUITA coisa para colocar no texto, então é só
+usar:
+
+O nome dessa técnica é "Template Strings", ou seja, tem-
+plate de string, formatador de strings.
+`Eu estou aprendendo ${_JavaScript} com idade de ${idade}.`
+Usando o ${} que chamamos de "placeholder"
+
+Existem outras coisas que podem ser feitas com a string, usarei de
+exemplo a váriavel "s"
+
+s.length - não tem parenteses no final por ser um atributo, ele mostra
+o tamanho da string.
+s.toUpperCase() - joga tudo para MAIÚSCULAS
+s.toLowerCase() - joga tudo para MINÚSCULAS
+
+Dá pra fazer bem mais coisas usando strings, mas por enquanto só aprende-
+remos essas coisas.
+
+Formatação de números:
+> var n1 = 1545.5
+> n1
+1545.5
+> n1.toFixed(2)
+'1545.50'
+> n1.toFixed(2).replace('.', ',')
+'1545,50'
+
+* Uma curiosidade é que dá para colocar o estilo da moeda:
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1.545,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+'US$ 1.545,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BTC'})
+'BTC 1.545,50'

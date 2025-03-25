@@ -1,0 +1,33 @@
+
+-> Objetos - Atribuição via desestruturação:
+
+Hoje iremos utilizar objetos, e é basicamente a mesma coisa, só muda o objeto.
+
+const pessoa = {
+	nome: 'Luiz',
+	sobrenome: 'Miranda',
+	idade: 30,
+	endereco: {
+		rua: 'Av Brasil',
+		numero: 320
+	}
+}
+
+//const nome = pessoa.nome; //Isso já é a atribuição normal
+//Atribuição via desestruturação
+const { nome } = pessoa;
+console.log(nome)
+
+Isso facilita a vida da gente pois podemos pegar quantas chaves eu quiser:
+const { nome: n  = '', sobrenome } = pessoa //caso não tenha valor no nome, mostrar vazio.
+console.log(n, sobrenome)
+//mudamos o nome da chave
+
+Agora a gente já sabe que a gente pode dar um valor
+padrão para a nossa váriavel, a gente já sabe que a gente pode especificar a chave e mudar o nome da váriavel.
+
+A gente também pode pegar alguma coisa que está dentro
+do endereço:
+const { endereco: {rua, numero } } = pessoa;
+console.log(rua, numero);
+

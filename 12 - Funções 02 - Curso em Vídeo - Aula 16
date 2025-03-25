@@ -1,0 +1,165 @@
+Anotações Aula 16 - Funções
+
+Você tem várias funções na sua vida, a sua mãe te dá várias funções na sua vida,
+todo filho tem um conjunto de tarefas que ele tem que fazer.
+* Imagine:
+A sua mãe chega para você e te dá um dinheiro, logo ela pede para você ir no
+mercado e comprar leite, qual é a sua função? Você pega esse dinheiro, vai até
+o mercado, vai chegar lá de alguma maneira, vai fazer os procedimentos lá dentro,
+vai pegar a sua garrafa de leite e entregar para a sua mãe. E uma vez que sua
+funcionalidade terminou, ela se encerrou.
+Pra sua mãe não importa oq vc fez, para ela, tem que te entregar o dinheiro, te
+passar a ordem, e você vai ter que trazer leite, o que você tem que fazer não
+importa, ela só que quer o retorno.
+
+Agora vamos dar nome a essas tais coisas:
+Dar nomes a algumas coisas que aparecem nessa cena: Quando sua mãe te chama e 
+te passa a ordem, chamamos de:
+chamada
+Às vezes é a sua mãe pedindo para você comprar leite, ou também pode ser uma
+funcionalidade que acontece toda quarta feira de manhã, você não precisa de um
+disparo da sua mãe, o disparo é o seu relógio.
+Toda quarta feira 6 da manhã você tem que ir na mercearia blalbalba - a chamada
+nem sempre é vocal, nem sempre é verbalizada, ela pode ser automatizada.
+
+Outra coisa que vc precisa é dinheiro para ir no mercado, sem alguma coisa de
+entrada, que chamamos de parametro, que nessa história existem 2 parametros:
+o dinheiro que você precisou para comprar e o que a sua mãe queria. isso faz
+parte da chamada também.
+Quando você pega o dinheiro e de posse da informação que a sua mãe quer leite,
+ir na mercearia, todo o processo que você tem que fazer para conseguir o leite
+a gente chama de ação. Toda função também tem uma ação envolvida.
+E no final quando você volta para sua casa e dá o leite para a sua mãe, chamamos
+de retorno.
+
+Então:
+Toda função pode ter os seguintes fatores:
+Uma chamada;
+Um conjunto de parâmetros;
+Uma ação;
+Um retorno;
+(nem toda ação usa parâmetros, nem toda função tem retornos, mas as que vamos
+ver agora tem sim e são muito importantes para darmos continuidades para as
+nossas tarefas).
+
+Definição técnica:
+* Função são ações executadas assim que são chamadas ou em decorrência de algum
+evento.
+* Uma função pode receber parâmetros e retornar um resultado.
+
+Você vai executar alguma coisa quando a sua mãe te chamar ou quando acontecer
+algum evento: quarta feira 8 da manha, todo dia quando chover vc tem que tirar
+aa roupá do varal, são funções que acontecem automaticamente, outras
+precisam de uma chamada.
+Para a programação os dois conceitos da 2* eles servem e se encaixam perfeitamente
+na história que foi contada.
+
+Já utilizamos funções, colocamos um botão em HTML e quando clicasse "onclick"
+era chamada uma função (em JS), essa função que tem o nome que era o nome da ação,
+e nessa época não colocavamos parầmetros, apenas colocavamos parenteses sem nada.
+Não havia retorno.
+
+A partir de agora iremos dar um "upgrade" nesse conceito de função.
+Dentro dos parenteses podemos colocar parametros que vão ser processados pela
+ação e podem ter um resultado.
+Essa ação não executa por padrão, tem que ter uma chamada:
+ação(5) - Chamando a ação, passnado um valor (5), esse valor 5 vai para o
+parâmetro, esse parametro vai passar a valer 5, vamos fazer as contas, o processamento
+no bloco, e no final podemos dar o retorno de algum resultado.
+Esse retorno de resultado vai ser voltado lá novamente para a chamada. Quem fez
+a chamada, na história, a sua mãe.
+
+Então eu tinha identificado 4 componentes básicos lá da minha função:
+a chamada, os parametros, a ação e o retorno.
+
+function ação(param){ //parametro formal
+
+		      //ação
+	return res //retorno de algum resultado.
+}
+
+ação(5) //chamada //parametro real
+
+Exemplo de funcionalidade simples:
+
+function parimp(n){ //parâmetro
+
+	if (n % 2 == 0){      //ação
+		return 'par'
+	} else {
+		return 'impar'  //retorno
+	}
+
+}
+
+let res = parimp(11) //vai pegar esse 11 e jogar lá para cima no n
+		//chamada
+
+Quanto executar o programa..
+res == impar
+
+Exemplo em funcao02.js Na pasta de JS. - ex013:
+
+function soma(n1, n2){ //2 vai vir para o n1 e 5 para o n2.
+    return n1 + n2 //vai retornar o parâmetro
+}
+//o que vai fazer com o return? mostrar na tela.
+console.log(soma(2, 5)) //chamada, 2 e 5 são parâmetros
+
+//Se eu colocar apenas um número nos parâmetros da chamada, vai dar NaN, pois ficou como 2 e indefinido, 2 + indefinido no JS é "NaN" - "Not a Number", não é um número.
+//Para resolver isso:
+//function soma(n1=0, n2=0) parâmetros opcionais.
+//Se o n1 não for passado = 0, se o n2 não for passado = 0.
+
+//Jogar uma função dentro de uma várivel
+
+let v = function(x) {
+    return x * 2
+}
+
+console.log(v(5))
+
+//Eu passei para a minha váriavel um parâmetro e ele conseguiu executar uma função.
+//Existem também uma sintaxe que é arrow function, que são as funções arrow, a função flecha que utiliza:
+// =>
+//Não entraremos nisso nesse curso.
+
+* Mostrar fatorial:
+function fatorial(n){
+    let fat = 1
+    for(let c = n; c > 1; c--){
+        fat *= c
+    } //Contador começando em N, enquanto for maior que 1, perde 1, pois o fatorial vai diminuindo até chegar em 1.
+    return fat
+}
+    
+console.log(fatorial(5))
+
+// 5! = 5 x 4 x 3 x 2 x 1 = 120
+//Calcular fatorial
+
+//Fatorial com Recursividade
+// RECURSIVIDADE
+function fatorial(n) {
+    if (n == 1) {
+        return 1
+    } else {
+        return n * fatorial(n-1)
+    }
+}
+
+console.log(fatorial(5))
+
+//Criando uma função fatorial que dentro dela há uma chamada para uma função dela mesmo.
+
+
+/*
+
+5! = 5 x 4 x 3 x 2 x 1
+5! = 5 x 4!
+O fatorial de um número pode ser calculado a partir do fatorial de outro.
+
+n! = n x (n - 1)!
+1! = 1
+
+*/

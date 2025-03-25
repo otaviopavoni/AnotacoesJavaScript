@@ -1,0 +1,100 @@
+Nesse último módulo aprenderemos:
+
+* Váriaveis Compostas
+* Uso de funções e eventos
+* Passagem de parãmetros
+* Exercícios Propostos
+* Próximos Passos
+
+- Váriaveis Compostas (arrays):
+Diferença entre variáveis simples e compostas:
+* Variáveis simples só conseguem armazenas um valor por vez.
+* Variáveis compostas devem ser capazes de armazenas vários
+valores em uma mesma estrutua.
+
+Voltando ao exemplo de estacionamento visto nas aulas de
+váriaveis há um tempo:
+vaga a0
+vaga a1
+vaga a2
+vaga a3
+vaga a4
+vaga a5
+- Agora imagina se fosse 200 vagas...
+Teria MUITOS códigos.
+
+Uma forma para você escrever menos e conseguir colocar facil-
+mente várias vagas:
+Em uma fileira de carros, tal fileira se chamará "a"
+vaga a = [s, b, c, d, e, f, t]
+Cada espacinho desse, que a virgula separa, chamamos de
+chave ou indíce, e ele recebe um número. (Começa com 0).
+* A váriavel que acabamos de declarar com "a", chamamos de
+array, ou em português: vetor.
+Vetor é uma variável com vários espaços.
+
+-----------------------------------------------
+O vetor é composto de elementos, o elemento de um vetor
+é um par que agrupa o espaço da memória, o valor colocado
+dentro dele e o índice.
+E os componentes, está o conteúdo de cada elemento.
+-----------------------------------------------
+Um array, um vetor, uma variável composta é uma 
+variável que contém vários elementos, cada elemento é
+composto por seu valor e por uma chave de identificação.
+-----------------------------------------------
+
+Como deixar isso com os carros, só que em JavaScript?
+var num = [ , , ]
+
+Quando eu divido essa variável em 3 partes, automaticamente
+ele vai dividir essa variável em 3 partes e já vai dar os
+indices, lembranco que o primeiro índice é 0.
+
+var num = [5, 8, 4]
+	   0  1  2
+
+- Caso você queira adicionar um valor na array, coloque:
+let num = [5, 8, 4]
+num[3] = 6 //Ele vê automaticamente que não tem algum valor
+no local 3.
+Você também pode colocar:
+num.push(7) //Vai ver automaticamente e acrescentar no último
+indices o valor que você colocou entre parenteses.
+
+- Para saber o comprimento da sua array, basta utilizar:
+>> num.length //não tem parenteses em JS, é um atributo.
+5
+
+num.sort() //Vai pegar todos os elementos e colocar em ordem
+crescente.
+
+console.log(num[0])
+console.log(num[1])
+console.log(num[2])
+
+//Olha só como fica cheio de linha para mostrar cada valor do
+vetor sem a formatação no texto de: "[, , ,]"
+A única coisa que muda nessas linhas é a posição.
+
+let num = [4, 5, 6, 7, 8]
+for(let pos=0;pos<num.length;pos++){
+	console.log('num[pos]')
+}
+
+---------
+Há uma maneira mais simples de fazer isso:
+---------
+
+O JS a partir das versões mais recentes de ECMAscript começou
+a facilitar ainda mais esse código:
+for(let pos in num ){ //Para cada posição em num, vai mostrar
+o num[pos]
+	console.log(num[pos])
+}
+
+* Dá para buscar valores dentro de uma array com comandos
+num.indexOf(7) //Ele vai procurar no array o valor com 7,
+e essa função retornará a posição de tal valor.
+
+num.indexOf(3) //Não tem 3, então vai retornar "-1"
